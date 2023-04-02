@@ -57,8 +57,9 @@ const NavComponent = () => {
     return (
         <header className="fixed z-50 bg-white w-screen p-3 px-4 md:p-6 md:px-16 ">
             <div className="hidden md:flex w-full h-full">
-                <Link to={'/'} className="flex items-center gap-2">
-                    <img src={Logo} className=" object-contain w-56 h-20" alt="logo" />
+                <Link to={'/'} className="flex items-center ">
+                    <img src={Logo} className=" object-contain w-auto h-24" alt="logo" />
+                    <h1 className="font-serif  text-center items-center justify-center text-5xl">ROYALOAK</h1>
                 </Link>
                 <div className="flex items-center ml-auto">
                     <motion.ul
@@ -76,7 +77,7 @@ const NavComponent = () => {
                             <a className=" flex items-center gap-1" href="#"><BsPerson />  Contact Us</a>
                         </li>
                     </motion.ul>
-                    <div className="flex items-center px-5">
+                    {/* <div className="flex items-center px-5">
                         <input className="border-2 rounded-sm justify-end p-1 text-sm bg-transparent font-semibold outline-none broder-none placeholder:text-gray-500" type="search" placeholder="Search here" ></input>
                         <button type="submit" className="bg-transparent hover:bg-maincolor text-maincolor font-semibold hover:text-white py-1 px-2 border  hover:border-transparent rounded ">Search</button>
                     </div>
@@ -84,7 +85,7 @@ const NavComponent = () => {
                         <motion.div whileTap={{ scale: 0.6 }} className="flex items-center " >
                         <BsHeart className="hover:text-maincolor  text-2xl  cursor-pointer" />
                          </motion.div >
-                        </Link>
+                        </Link> */}
                        
                     <motion.div whileTap={{ scale: 0.6 }} className="relative flex items-center px-5 " 
                     onClick={showCart} >
@@ -128,8 +129,32 @@ const NavComponent = () => {
             </div>
             <div className=" md:hidden w-full h-full">
                 <div className="flex items-center justify-between">
-                    <Link to={'/'} className="flex items-center gap-2">
-                        <img src={Logo} className=" object-contain w-56 h-20" alt="logo" />
+
+                <div className="flex  items-center px-1 justify-between">
+                    {/* <input className="border-2 rounded-sm justify-end p-1" type="search" placeholder="Search here" ></input>
+                    <button type="submit" className="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-1 px-2 border  hover:border-transparent rounded">Search</button>
+                    <Link to={'/wishlist'}>
+                    <motion.div whileTap={{ scale: 0.6 }} className="flex items-center px-2 " >
+                        <BsHeart className="hover:text-green-500 text-2xl  cursor-pointer" />
+                    </motion.div >
+                    </Link> */}
+                    
+
+                    
+                    <motion.div whileTap={{ scale: 0.6 }} className="relative flex items-center  " 
+                    onClick={showCart}>
+                        <BsCart3 className="hover:text-green-500 text-2xl  cursor-pointer" />
+                        { cartItems && cartItems.length > 0 && (
+                            <div className="absolute -top-1 right-4 w-4 h-4 rounded-full bg-maincolor flex items-center justify-center ">
+                            <p className="text-xs text-white font-semibold">{cartItems.length}</p>
+                        </div>
+                        )}
+                    </motion.div>
+                </div>
+                
+                    <Link to={'/'} className="flex items-center ">
+                        <img src={Logo} className=" object-contain w-auto h-20" alt="logo" />
+                        <h1 className="font-serif  text-center items-center justify-center text-3xl">ROYALOAK</h1>
                     </Link>
 
                     <div className="relative">
@@ -170,27 +195,7 @@ const NavComponent = () => {
                             )}
                     </div>
                 </div>
-                <div className="flex  items-center px-1 justify-between">
-                    <input className="border-2 rounded-sm justify-end p-1" type="search" placeholder="Search here" ></input>
-                    <button type="submit" className="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-1 px-2 border  hover:border-transparent rounded">Search</button>
-                    <Link to={'/wishlist'}>
-                    <motion.div whileTap={{ scale: 0.6 }} className="flex items-center px-2 " >
-                        <BsHeart className="hover:text-green-500 text-2xl  cursor-pointer" />
-                    </motion.div >
-                    </Link>
-                    
-
-                    
-                    <motion.div whileTap={{ scale: 0.6 }} className="relative flex items-center px-5 " 
-                    onClick={showCart}>
-                        <BsCart3 className="hover:text-green-500 text-2xl  cursor-pointer" />
-                        { cartItems && cartItems.length > 0 && (
-                            <div className="absolute -top-1 right-4 w-4 h-4 rounded-full bg-maincolor flex items-center justify-center ">
-                            <p className="text-xs text-white font-semibold">{cartItems.length}</p>
-                        </div>
-                        )}
-                    </motion.div>
-                </div>
+              
             </div>
         </header> 
     );

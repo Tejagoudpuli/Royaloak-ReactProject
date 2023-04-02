@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
-import { NavComponent,MainContainer,CreateContainer, CartContainer, WishList } from './components';
+import { NavComponent,MainContainer,CreateContainer, CartContainer, WishList, Footer } from './components';
 import { AnimatePresence } from 'framer-motion';
 import { Route,Routes } from 'react-router-dom';
 import { useStateValue } from './context/StateProvider';
 import { getAllWoodenItems } from './utils/firebaseFunctions';
 import { actionType } from './context/reducer';
-
-
 
 const  App = ()=> {
 
@@ -38,6 +36,7 @@ const  App = ()=> {
           <Route path='/wishlist' element={<WishList/>}/>
         </Routes>
       </main>
+      <Footer/>
     </div>
     </AnimatePresence>
   );

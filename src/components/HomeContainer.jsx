@@ -16,7 +16,7 @@ const HomeContainer = () => {
                     <button type='button' className='md:w-auto bg-maincolor w-full px-4 py-2 rounded-lg hover:bg-green-600 hover:shadow-lg transition-all ease-in-out duration-100'>Order now</button>
                 </div>
                 <div className='py-2  flex-1'>
-                <img src={Jumbo} className="ml-auto h-420 w-full  lg:w-auto lg:h-510 " alt="erroe"></img>
+                <img src={Jumbo} className="ml-auto h-400 w-full  lg:w-auto lg:h-510 md:h-250 " alt="error"></img>
                 </div>
 
             </section>

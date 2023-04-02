@@ -7,6 +7,7 @@ import { useStateValue } from '../context/StateProvider'
 import MenuContainer from './MenuContainer'
 import CartContainer from './CartContainer'
 
+
 const MainContainer = () => {
   const [{woodenitems,cartShow},dispatch] = useStateValue()
 
@@ -15,6 +16,7 @@ const MainContainer = () => {
   useEffect(()=>{},[scrollValue,cartShow])
 
   return (
+    <>
    <div className='w-full h-auto flex-col items-center justify-center ' >
     <HomeContainer/>
 
@@ -49,7 +51,10 @@ const MainContainer = () => {
     { cartShow && (
        <CartContainer />
     )}
+
+    
    </div>
+   </>
   )
 }
 
